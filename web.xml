@@ -1,0 +1,13 @@
+<h:form>
+    <h:outputLabel for="name">Name:</h:outputLabel>
+    <h:inputText id="name" value="#{admissionBean.name}" required="true"/>
+    <h:outputLabel for="email">Email:</h:outputLabel>
+    <h:inputText id="email" value="#{admissionBean.email}" required="true" validator="#{emailValidator.validate}"/>
+    <h:outputLabel for="major">Major:</h:outputLabel>
+    <h:selectOneMenu id="major" value="#{admissionBean.major}" required="true">
+        <f:selectItem itemValue="Computer Science" itemLabel="Computer Science"/>
+        <f:selectItem itemValue="Mathematics" itemLabel="Mathematics"/>
+        <f:selectItem itemValue="Physics" itemLabel="Physics"/>
+    </h:selectOneMenu>
+    <h:commandButton value="Submit" action="#{admissionBean.submit}"/>
+</h:form>
